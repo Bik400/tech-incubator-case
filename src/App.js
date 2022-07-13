@@ -2,10 +2,13 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
-import Account from "./components/Account";
+import MainPage from "./components/MainPage";
 import "./App.css";
 import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import AddEdit from "./components/AddEdit";
+import ViewUser from "./components/ViewUser";
+import { ToastContainer, toastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -16,10 +19,34 @@ function App() {
           <Route path="/" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route
-            path="/account"
+            path="/mainpage"
             element={
               <ProtectedRoute>
-                <Account />
+                <MainPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/add"
+            element={
+              <ProtectedRoute>
+                <AddEdit />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/update/:id"
+            element={
+              <ProtectedRoute>
+                <AddEdit />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/view/:id"
+            element={
+              <ProtectedRoute>
+                <ViewUser />
               </ProtectedRoute>
             }
           />
