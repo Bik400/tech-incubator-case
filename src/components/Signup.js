@@ -15,7 +15,7 @@ const Signup = () => {
     setError("");
     try {
       await createUser(email, password);
-      navigate("/account"); //After the user account is created, navigate to account page
+      navigate("/"); //After the user account is created, navigate to signin page
     } catch (e) {
       setError(e.message);
       console.log(e.message);
