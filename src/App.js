@@ -8,12 +8,12 @@ import { AuthContextProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AddEdit from "./components/AddEdit";
 import ViewUser from "./components/ViewUser";
-import { ToastContainer, toastContainer } from "react-toastify";
+import SubmitTask from "./components/SubmitTask";
 
 function App() {
   return (
     <div>
-      <h1 className="text-center text-3xl font-bold">Firebase Auth</h1>
+      {/* <h1 className="text-center text-3xl font-bold">Firebase Auth</h1> */}
       <AuthContextProvider>
         <Routes>
           <Route path="/" element={<Signin />} />
@@ -47,6 +47,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <ViewUser />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/submit"
+            element={
+              <ProtectedRoute>
+                <SubmitTask />
               </ProtectedRoute>
             }
           />
