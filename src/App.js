@@ -9,6 +9,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import AddEdit from "./components/AddEdit";
 import ViewUser from "./components/ViewUser";
 import SubmitTask from "./components/SubmitTask";
+import ListPage from "./components/ListPage";
 
 function App() {
   return (
@@ -55,6 +56,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <SubmitTask />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/listpage"
+            element={
+              <ProtectedRoute>
+                <ListPage />
               </ProtectedRoute>
             }
           />
